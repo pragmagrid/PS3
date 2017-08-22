@@ -1,0 +1,6 @@
+ROLLNAME	= PS3
+VERSION		= 1.0
+RELEASE		= 0
+COLOR		= mediumorchid
+
+REDHAT.ROOT	= $(CURDIR)
