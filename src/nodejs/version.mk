@@ -1,5 +1,5 @@
 PKGROOT	     = /opt/PS3
-NAME         = nodejs
+NAME         = ps3-nodejs
 VERSION      = 1.0
 RELEASE      = 1
 

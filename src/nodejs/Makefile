@@ -71,10 +71,10 @@ build:
 	(cd patch-files && find . -type f | grep -v CVS | cpio -pduv ../)
 	bash $(SETUP_SCRIPT)
 	rpm2cpio $(NODEJS_REPO).noarch.rpm | cpio -idmv
-	yumdownloader -c ./etc/yum.repos.d/*.repo --resolve $(NAME)
+	yumdownloader -c ./etc/yum.repos.d/*.repo --resolve nodejs
 
 rpm::   build
-	cp $(NAME)*.$(ARCH).rpm $(REDHAT.RPMS)/$(ARCH)/
+	cp *.rpm $(REDHAT.RPMS)/$(ARCH)/
 
 clean::
 	rm -rf ./usr/ ./etc/
