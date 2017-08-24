@@ -55,28 +55,20 @@
 #
 # $Log$
 
-REDHAT.ROOT = $(CURDIR)/../../
-
--include $(ROCKSROOT)/etc/Rules.mk
-include Rules.mk
-
 REDHAT.ROOT     = $(PWD)/../..
 MAKE.iscontrib  = 1
 -include $(ROCKSROOT)/etc/Rules.mk
 include Rules.mk
 
 build:
+	mkdir -p $(REDHAT.RPMS)/$(ARCH)/
 	#mkdir -p $(REDHAT.RPMS)/$(ARCH)/
 	#cp nodejs$(NODEJS_MAJOR)/$(SETUP_SCRIPT) .
 	#(cd patch-files && find . -type f | grep -v CVS | cpio -pduv ../)
 	#bash $(SETUP_SCRIPT)
 	#rpm2cpio $(NODEJS_REPO).noarch.rpm | cpio -idmv
 	#yumdownloader -c ./etc/yum.repos.d/*.repo --resolve $(NODEJS)
+
+rpm:: build
 	cp $(NODEJS)*.rpm $(REDHAT.RPMS)/$(ARCH)/
 
-rpm::
-	echo "Nothing to do. RPMs were created in build target"
-
-clean::
-	rm -rf ./usr/ ./etc/
-	rm -rf $(SETUP_SCRIPT)
