@@ -65,10 +65,12 @@ build:
 	git clone https://github.com/scality/S3
 	(cd S3; git checkout eb9b3502d0ee5146953e85d942844bf9fa311d98)
 	(cd patch-files && find . -type f | grep -v CVS | cpio -pduv ../)
-	(				\
-		cd S3; 			\
-		npm install;		\
-		npm -g install; \
+	(					\
+		scl enable devtoolset-3 bash; 	\
+		module load opt-python; 	\
+		cd S3; 				\
+		npm install;			\
+		npm -g install; 		\
 		npm --prefix=$(PKGROOT) install; \
 	)
 	rocks create package $(PKGROOT) $(NAME)
