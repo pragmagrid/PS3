@@ -55,16 +55,17 @@
 #
 # $Log$
 
-REDHAT.ROOT = $(CURDIR)/../../
-
+REDHAT.ROOT = $(PWD)/../../
+MAKE.iscontrib  = 1
 -include $(ROCKSROOT)/etc/Rules.mk
 include Rules.mk
 
 
 build:
-	git clone https://github.com/scality/S3
-	(cd S3; git checkout eb9b3502d0ee5146953e85d942844bf9fa311d98)
-	(cd patch-files && find . -type f | grep -v CVS | cpio -pduv ../)
+	#git clone https://github.com/scality/S3
+	#(cd S3; git checkout eb9b3502d0ee5146953e85d942844bf9fa311d98)
+	#(cd patch-files && find . -type f | grep -v CVS | cpio -pduv ../)
+	tar xzvf $(DISTRONAME).$(TARBALL_POSTFIX)
 	(					\
 		module load opt-python; 	\
 		source /opt/rh/devtoolset-3/enable ; 	\
@@ -74,13 +75,13 @@ build:
 		npm -g install; 		\
 		npm --prefix=$(PKGROOT) install; \
 	)
-	rocks create package $(PKGROOT) $(REALNAME)
-	for rpm in `find . -name '$(REALNAME)-$(VERSION)*$(ARCH).rpm'`; do        \
+	rocks create package $(PKGROOT) $(NAME) version=$(VERSION) release=$(RELEASE)
+	for rpm in `find . -name '$(NAME)-$(VERSION)*$(ARCH).rpm'`; do        \
 	    echo "Copying $$rpm";                       \
 	    /bin/mv $$rpm $(REDHAT.ROOT)/RPMS/$(ARCH);  \
 	done
 	
-rpm::
+rpm:: build
 	echo "Nothing to do. RPMs were created in build target"
 
 
