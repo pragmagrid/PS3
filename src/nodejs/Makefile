@@ -66,15 +66,16 @@ MAKE.iscontrib  = 1
 include Rules.mk
 
 build:
-	mkdir -p $(REDHAT.RPMS)/$(ARCH)/
-	cp nodejs$(NODEJS_MAJOR)/$(SETUP_SCRIPT) .
-	(cd patch-files && find . -type f | grep -v CVS | cpio -pduv ../)
-	bash $(SETUP_SCRIPT)
-	rpm2cpio $(NODEJS_REPO).noarch.rpm | cpio -idmv
-	yumdownloader -c ./etc/yum.repos.d/*.repo --resolve nodejs
+	#mkdir -p $(REDHAT.RPMS)/$(ARCH)/
+	#cp nodejs$(NODEJS_MAJOR)/$(SETUP_SCRIPT) .
+	#(cd patch-files && find . -type f | grep -v CVS | cpio -pduv ../)
+	#bash $(SETUP_SCRIPT)
+	#rpm2cpio $(NODEJS_REPO).noarch.rpm | cpio -idmv
+	#yumdownloader -c ./etc/yum.repos.d/*.repo --resolve $(NODEJS)
+	cp $(NODEJS)*.rpm $(REDHAT.RPMS)/$(ARCH)/
 
-rpm::   build
-	cp *.rpm $(REDHAT.RPMS)/$(ARCH)/
+rpm::
+	echo "Nothing to do. RPMs were created in build target"
 
 clean::
 	rm -rf ./usr/ ./etc/
