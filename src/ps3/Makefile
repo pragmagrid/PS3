@@ -66,15 +66,16 @@ build:
 	(cd S3; git checkout eb9b3502d0ee5146953e85d942844bf9fa311d98)
 	(cd patch-files && find . -type f | grep -v CVS | cpio -pduv ../)
 	(					\
-		scl enable devtoolset-3 bash; 	\
 		module load opt-python; 	\
+		source /opt/rh/devtoolset-3/enable ; 	\
+		export X_SCLS="`scl enable devtoolset-3 'echo $X_SCLS'`"; \
 		cd S3; 				\
 		npm install;			\
 		npm -g install; 		\
 		npm --prefix=$(PKGROOT) install; \
 	)
-	rocks create package $(PKGROOT) $(NAME)
-	for rpm in `find . -name '$(NAME)-$(VERSION)*$(ARCH).rpm'`; do        \
+	rocks create package $(PKGROOT) $(REALNAME)
+	for rpm in `find . -name '$(REALNAME)-$(VERSION)*$(ARCH).rpm'`; do        \
 	    echo "Copying $$rpm";                       \
 	    /bin/mv $$rpm $(REDHAT.ROOT)/RPMS/$(ARCH);  \
 	done
