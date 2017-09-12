@@ -20,10 +20,10 @@ devoolset-3 RPMs are downloaded from
 NOTE: RedHat RPMS for nodejs and nodesource repo RPM are available from RPM nodesource repository
 that can be used for direct downloads of specifica versions:
 
-* [CentOS 6 Nodejs v.6](https://rpm.nodesource.com/pub_6.x/el/6/x86_64/
-* [CentOS 6 Nodejs v.7](https://rpm.nodesource.com/pub_7.x/el/6/x86_64/
-* [CentOS 7 Nodejs v.6](https://rpm.nodesource.com/pub_6.x/el/7/x86_64/
-* [CentOS 7 Nodejs v.7](https://rpm.nodesource.com/pub_7.x/el/7/x86_64/
+* [CentOS 6 Nodejs v.6](https://rpm.nodesource.com/pub_6.x/el/6/x86_64/)
+* [CentOS 6 Nodejs v.7](https://rpm.nodesource.com/pub_7.x/el/6/x86_64/)
+* [CentOS 7 Nodejs v.6](https://rpm.nodesource.com/pub_6.x/el/7/x86_64/)
+* [CentOS 7 Nodejs v.7](https://rpm.nodesource.com/pub_7.x/el/7/x86_64/)
 
 Link from the [Scality Cloudserver](https://github.com/scality/S3) 
 points to the [nodejs github instructions](https://github.com/nodesource/distributions)
