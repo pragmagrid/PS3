@@ -79,3 +79,7 @@ TBA
 ## Using a roll
 
 TBS
+
+## LInks
+
+* [How to Install Node.js on CentOS 6](https://www.subhosting.net/kb/how-to-install-nodejs-on-centos-6/)
