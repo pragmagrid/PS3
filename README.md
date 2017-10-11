@@ -44,6 +44,12 @@ Summary of instructions
 All dependencies, build or fetched per above instrucitons are saved in google ddrive 
 and are downloaded in ``bootstrap.sh`` when building the roll.
 
+3. Download Command line tool for managing Amazon S3 and CloudFront services (s3cmd)
+   See http://s3tools.org/download
+   ```shell
+   wget https://sourceforge.net/projects/s3tools/files/s3cmd/2.0.0/s3cmd-2.0.0.tar.gz 
+   ```
+
 ### Scality s3
 
 [Scality Cloudserver](https://github.com/scality/S3) is downloaded and saved 

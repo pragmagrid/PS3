@@ -29,5 +29,8 @@
 	<package>devtoolset-3-gcc-c++</package>
 	<package>nodejs</package>
 	<package>ps3</package>
+	<package>opt-s3smd</package>
+	<package>opt-dateutil</package>
+	<package>opt-six</package>
 
 </kickstart>

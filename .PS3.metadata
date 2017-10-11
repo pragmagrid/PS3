@@ -8,3 +8,6 @@ f1eaf5ebc7a5ed6672af44b4739600031ee9366c  src/devtoolset3/devtoolset-3-libstdc++
 7466c39474cd7afc0c462ed7dafcca97db428528  src/nodejs/nodejs-6.11.2-1nodesource.el6.x86_64.rpm 0BzgozEGuMWotYWNiN25yWmMtcVU
 822737d42dfd4a3540ce1dcd442ae66a5438ad76  src/nodejs/nodesource-release-el6-1.noarch.rpm 0BzgozEGuMWotUGxrRUpjV2VnODQ
 0e5f2d11cbd8f5ce255373f3d84c77a6eebcd3dc  src/ps3/S3.tar.gz 0BzgozEGuMWotaHJlMlVzcGwxN2M
+8e6feb30d2d603985b58bddd2ff8e98975ac9618  src/s3cmd/s3cmd-2.0.0.tar.gz 0BzgozEGuMWotMFlXVG5WRTE4WEE
+b25dd877c43f7de38abc5a20e213920fe9a889f2  src/opt-dateutil/python-dateutil-2.5.2.tar.gz 0BzgozEGuMWotRE5ldUtDWGczUWs
+30d480d2e352e8e4c2aae042cf1bf33368ff0920  src/opt-six/six-1.10.0.tar.gz 0BzgozEGuMWotY21JWGNHWFk3WnM
