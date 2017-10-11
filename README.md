@@ -6,7 +6,7 @@ Roll to build and install [Scality Cloudserver](https://github.com/scality/S3) a
 
 ## Dependencies
 
-Building and running S3 requires node.js v.6.* and npm v3.
+Building and running S3 requires node.js v.6.x and npm v3.
 Compiling  S3 modules with npm requires  python27 and gcc v 4.7+
 which is provided with devtoolset-3
 
@@ -17,17 +17,17 @@ devoolset-3 RPMs are downloaded from
 
 ### nodejs
 
-NOTE: RedHat RPMS for nodejs and nodesource repo RPM are available from RPM nodesource repository
-that can be used for direct downloads of specifica versions:
+NOTE: RedHat RPMs for nodejs and nodesource repo RPM are available from RPM nodesource repository
+that can be used for direct downloads of specific versions:
 
-* [CentOS 6 Nodejs v.6](https://rpm.nodesource.com/pub_6.x/el/6/x86_64/
-* [CentOS 6 Nodejs v.7](https://rpm.nodesource.com/pub_7.x/el/6/x86_64/
-* [CentOS 7 Nodejs v.6](https://rpm.nodesource.com/pub_6.x/el/7/x86_64/
-* [CentOS 7 Nodejs v.7](https://rpm.nodesource.com/pub_7.x/el/7/x86_64/
+* [CentOS 6 Nodejs v.6](https://rpm.nodesource.com/pub_6.x/el/6/x86_64/)
+* [CentOS 6 Nodejs v.7](https://rpm.nodesource.com/pub_7.x/el/6/x86_64/)
+* [CentOS 7 Nodejs v.6](https://rpm.nodesource.com/pub_6.x/el/7/x86_64/)
+* [CentOS 7 Nodejs v.7](https://rpm.nodesource.com/pub_7.x/el/7/x86_64/)
 
 Link from the [Scality Cloudserver](https://github.com/scality/S3) 
 points to the [nodejs github instructions](https://github.com/nodesource/distributions)
-for downloading and building nodejs.  These instrucitons are now used in this roll **src/nodejs/**
+for downloading and building nodejs.  These instructions are now used in this roll **src/nodejs/**
 
 Summary of instructions
 
@@ -35,13 +35,13 @@ Summary of instructions
    ```shell
    curl -sL https://rpm.nodesource.com/setup_6.x  > setup_6.sh
    ```
-2. Eidt ths downloaded script stash in nodejs/patch-files.  Edited version does: 
+2. Edit the downloaded script stash in nodejs/patch-files.  Edited version does: 
 
-   * download nodejs repo
+   * download nodejs repository
    * setup yum to use it locally (do not install for the system)
    * download nodejs RPM
 
-All dependencies, build or fetched per above instrucitons are saved in google ddrive 
+All dependencies, build or fetched per above instructions are saved in Google drive 
 and are downloaded in ``bootstrap.sh`` when building the roll.
 
 3. Download Command line tool for managing Amazon S3 and CloudFront services (s3cmd)
@@ -85,3 +85,11 @@ TBA
 ## Using a roll
 
 TBS
+
+## LInks
+
+* [How to Install Node.js on CentOS 6](https://www.subhosting.net/kb/how-to-install-nodejs-on-centos-6/)
+* [Scality Ring Software](http://www.scality.com/why-scality/)
+* [Scality Cloudserver](https://github.com/scality/S3)
+* [CentOS devtoolset 2 RPMs from people.centos.org repository](https://people.centos.org/tru/devtools-2/6/x86_64/SRPMS/)
+* [CentOS devtoolset 3 RPMS from people.centos.org repository](https://people.centos.org/tru/devtoolset-3-rebuild/x86_64/RPMS)
